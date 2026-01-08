@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gui SMS CSKH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Gui SMS CSKH</h1>
+
+  <label for="input">Paste nhieu dong tu Excel:</label>
+  <textarea id="input"
+    placeholder="0973258093	Hà Nội - Hải Phòng	22	10/11/2023"></textarea>
+
+  <div class="actions">
+    <button class="btn secondary" onclick="preview()">Preview</button>
+    <button id="sendBtn" class="btn primary" onclick="sendBulk()">Gui tat ca</button>
+  </div>
+
+  <div id="previewBox"></div>
+
+  <hr>
+
+  <h2>Lich su gui SMS</h2>
+
+  <table id="logTable">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>So dien thoai</th>
+        <th>Noi dung SMS</th>
+        <th>Trang thai</th>
+        <th>Loi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+/* ===============================
+   CONFIG
+================================ */
+// ❌ KHONG DUNG localhost
+// ✅ FRONTEND & BACKEND CUNG SERVER
+const API_BASE = "";
+
+const ERROR_MAP = {
+  "000": "Gui tin thanh cong",
+  "011": "Noi dung khong dung mau CSKH da dang ky",
+  "019": "So dien thoai khong hop le",
+  "304": "Nghi ngo spam / gui qua nhanh",
+  "904": "Brandname khong hop le hoac chua duoc cap quyen",
+  "014": "Tai khoan het so du",
+  "100": "Token khong hop le hoac het han",
+  "103": "Tai khoan khong co quyen gui CSKH",
+  "NETWORK": "Loi mang hoac ket noi API"
+};
+
+/* ===============================
+   PREVIEW
+================================ */
+async function preview() {
+  const input = document.getElementById("input").value.trim();
+  if (!input) {
+    alert("Vui long nhap du lieu");
+    return;
+  }
+
+  const box = document.getElementById("previewBox");
+  box.innerHTML = "Dang tao preview...";
+
+  const res = await fetch(API_BASE + "/preview", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ input })
+  });
+
+  const data = await res.json();
+  if (!data.success) {
+    box.innerHTML = `<div class="error">${data.error}</div>`;
+    return;
+  }
+
+  let html = `
+    <table>
+      <tr>
+        <th>#</th>
+        <th>So dien thoai</th>
+        <th>Noi dung SMS</th>
+      </tr>
+  `;
+
+  data.preview.forEach(r => {
+    html += `
+      <tr>
+        <td>${r.index}</td>
+        <td>${r.phone}</td>
+        <td>${r.message}</td>
+      </tr>
+    `;
+  });
+
+  html += "</table>";
+  box.innerHTML = html;
+}
+
+/* ===============================
+   GUI SMS
+================================ */
+async function sendBulk() {
+  const input = document.getElementById("input").value.trim();
+  if (!input) {
+    alert("Vui long nhap du lieu");
+    return;
+  }
+
+  const btn = document.getElementById("sendBtn");
+  const box = document.getElementById("previewBox");
+
+  btn.disabled = true;
+  btn.innerText = "Dang gui...";
+  btn.classList.add("loading");
+
+  try {
+    await fetch(API_BASE + "/send-bulk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ input })
+    });
+
+    box.innerHTML =
+      `<div class="success">Gui SMS hoan tat. Vui long xem lich su ben duoi.</div>`;
+
+    document.getElementById("input").value = "";
+    loadLogs();
+  } catch (err) {
+    console.log("Send error:", err);
+  } finally {
+    btn.disabled = false;
+    btn.innerText = "Gui tat ca";
+    btn.classList.remove("loading");
+  }
+}
+
+/* ===============================
+   LOAD LICH SU
+================================ */
+async function loadLogs() {
+  try {
+    const res = await fetch(API_BASE + "/logs");
+    const data = await res.json();
+    if (!data.success) return;
+
+    const tbody = document.querySelector("#logTable tbody");
+    tbody.innerHTML = "";
+
+    data.logs.forEach((log, i) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td>${log.phone || ""}</td>
+        <td>${log.message || ""}</td>
+        <td class="${log.status === "SUCCESS" ? "ok" : "fail"}">
+          ${log.status === "SUCCESS" ? "Thanh cong" : "That bai"}
+        </td>
+        <td>
+          ${
+            log.status === "FAILED"
+              ? (ERROR_MAP[log.errorCode] || "Loi khong xac dinh")
+              : ""
+          }
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  } catch (e) {
+    console.log("Load logs error", e);
+  }
+}
+
+/* ===============================
+   AUTO LOAD
+================================ */
+document.addEventListener("DOMContentLoaded", loadLogs);
+</script>
+
+</body>
+</html>
