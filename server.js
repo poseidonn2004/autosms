@@ -216,7 +216,7 @@ app.post("/send-bulk", async (req, res) => {
             const logEntry = {
                 sendtime,
                 line: i + 1,
-                phone,
+                phone: lines[i],
                 status: "FAILED",
                 errorType,      // 👈 thêm để phân loại
                 errorCode,
