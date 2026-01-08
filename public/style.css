@@ -93,3 +93,54 @@ th {
     color: #2d7a2d;
     border-radius: 4px;
 }
+
+#logTable {
+    width: 100%;
+    table-layout: fixed;
+    /* 👈 QUAN TRỌNG NHẤT */
+    border-collapse: collapse;
+}
+
+/* STT */
+#logTable th:nth-child(1),
+#logTable td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+
+/* Thoi gian gui */
+#logTable th:nth-child(2),
+#logTable td:nth-child(2) {
+    width: 150px;
+    white-space: nowrap;
+}
+
+/* So dien thoai */
+#logTable th:nth-child(3),
+#logTable td:nth-child(3) {
+    width: 130px;
+}
+
+/* Noi dung SMS */
+#logTable th:nth-child(4),
+#logTable td:nth-child(4) {
+    width: auto;
+    /* 👈 ăn phần còn lại */
+    word-break: break-word;
+    /* 👈 KHÔNG VỠ BẢNG */
+    white-space: normal;
+    line-height: 1.4;
+}
+
+/* Trang thai */
+#logTable th:nth-child(5),
+#logTable td:nth-child(5) {
+    width: 100px;
+    text-align: center;
+}
+
+/* Loi */
+#logTable th:nth-child(6),
+#logTable td:nth-child(6) {
+    width: 180px;
+}

@@ -48,37 +48,16 @@ function delay(ms) {
 }
 
 function parseLine(line) {
-    const clean = line.trim();
+    const parts = line
+        .split("\t")
+        .map(p => p.trim())
+        .filter(Boolean);
 
-    // 1️⃣ Tìm ngày (dd/mm/yyyy)
-    const dateMatch = clean.match(/\b\d{1,2}\/\d{1,2}\/\d{4}\b/);
-    if (!dateMatch) {
-        throw new Error("Khong tim thay ngay (dd/mm/yyyy)");
+    if (parts.length < 4) {
+        throw new Error("Dong du lieu khong du 4 cot (phone, route, hour, date)");
     }
-    const date = dateMatch[0];
 
-    // 2️⃣ Cắt phần trước ngày
-    const beforeDate = clean.slice(0, dateMatch.index).trim();
-
-    // 3️⃣ Tách giờ (số cuối cùng trước ngày)
-    const hourMatch = beforeDate.match(/(\d+)\s*$/);
-    if (!hourMatch) {
-        throw new Error("Khong tim thay gio chay");
-    }
-    const hour = hourMatch[1];
-
-    // 4️⃣ Phần trước giờ = phone + route
-    const beforeHour = beforeDate.slice(0, hourMatch.index).trim();
-
-    // 5️⃣ Phone = số đầu tiên
-    const phoneMatch = beforeHour.match(/^\d{9,11}/);
-    if (!phoneMatch) {
-        throw new Error("Khong tim thay so dien thoai");
-    }
-    const phone = phoneMatch[0];
-
-    // 6️⃣ Route = tất cả phần còn lại (GIỮ NGUYÊN DẤU CÁCH)
-    const route = beforeHour.slice(phone.length).trim();
+    const [phone, route, hour, date] = parts;
 
     return {
         phone,
@@ -91,19 +70,21 @@ function parseLine(line) {
 
 
 
+
 function buildMessage(data) {
     const route = removeVietnameseTones(data.route)
-        .replace(/\s+/g, " ")   // 2–3 dấu cách → 1 dấu
+        .replace(/\s+/g, " ")
         .trim()
         .toUpperCase();
 
     return (
         `Quy Khach Dat Thanh Cong Chuyen Xe ${route} ` +
-        `${data.hour}h Ngay ${data.date} ` +
+        `${data.hour} Ngay ${data.date} ` +
         `Quy Khach Luu Lai SDT Tong Dai 19001997 ` +
-        `De Tien Dat Xe Cho Chuyen Sau. Tran Trong!`
+        `De Tien Dat Xe Cho Chuyen Sau.Tran Trong!`
     );
 }
+
 
 
 function normalizePhone(phone) {
@@ -158,7 +139,7 @@ app.post("/send-bulk", async (req, res) => {
     const results = [];
 
     for (let i = 0; i < lines.length; i++) {
-        const time = new Date().toISOString();
+        const sendtime = new Date().toISOString();
 
         try {
             const data = parseLine(lines[i]);
@@ -171,7 +152,7 @@ app.post("/send-bulk", async (req, res) => {
                     from: BRAND,
                     message,
                     scheduled: "",
-                    requestId: "",
+                    requestId: `${Date.now()}_${i}`,
                     useUnicode: 0,
                     type: 1
                 },
@@ -186,7 +167,7 @@ app.post("/send-bulk", async (req, res) => {
             const code = r.data.errorCode;
 
             const logEntry = {
-                time,
+                sendtime,
                 phone: data.phone,
                 message,
                 status: code === "000" ? "SUCCESS" : "FAILED",
@@ -198,22 +179,55 @@ app.post("/send-bulk", async (req, res) => {
             results.push({ line: i + 1, ...logEntry });
 
         } catch (err) {
-            const errorData = err.response?.data || {};
-            const code = errorData.errorCode || "NETWORK";
+            let errorCode = "UNKNOWN";
+            let errorMessage = "Unknown error";
+            let phone = "";
+            let errorType = "";
+
+            // 1️⃣ Lỗi từ API VMG (axios có response)
+            if (err.response) {
+                const apiData = err.response.data || {};
+
+                errorCode = apiData.errorCode || "API_ERROR";
+                errorType = "API_ERROR";
+
+                errorMessage =
+                    ERROR_MAP[errorCode] ||
+                    apiData.errorMessage ||
+                    `API error (HTTP ${err.response.status})`;
+
+                // cố lấy số điện thoại nếu có
+                phone = apiData.sendMessage?.to || "";
+
+            }
+            // 2️⃣ Lỗi parse / logic (do throw Error)
+            else if (err instanceof Error) {
+                errorCode = "PARSE_ERROR";
+                errorType = "PARSE_ERROR";
+                errorMessage = err.message;
+            }
+            // 3️⃣ Lỗi khác (network, timeout, không xác định)
+            else {
+                errorCode = "NETWORK_ERROR";
+                errorType = "NETWORK_ERROR";
+                errorMessage = "Network error or request failed";
+            }
 
             const logEntry = {
-                time,
-                phone: lines[i],
-                message: "",
+                sendtime,
+                line: i + 1,
+                phone,
                 status: "FAILED",
-                errorCode: code,
-                errorMessage: ERROR_MAP[code] || err.message
+                errorType,      // 👈 thêm để phân loại
+                errorCode,
+                errorMessage
             };
 
             saveLog(logEntry);
-            results.push({ line: i + 1, ...logEntry });
+            results.push(logEntry);
         }
-        await delay(3000); // delay 3 giây để tránh spam
+
+        await delay(4000); // delay 4 giây để tránh spam
 
     }
 

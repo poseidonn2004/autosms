@@ -29,6 +29,7 @@
     <thead>
       <tr>
         <th>STT</th>
+        <th>Thoi gian gui</th>
         <th>So dien thoai</th>
         <th>Noi dung SMS</th>
         <th>Trang thai</th>
@@ -161,6 +162,7 @@ async function loadLogs() {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${i + 1}</td>
+        <td>${log.sendtime || ""}</td>
         <td>${log.phone || ""}</td>
         <td>${log.message || ""}</td>
         <td class="${log.status === "SUCCESS" ? "ok" : "fail"}">
