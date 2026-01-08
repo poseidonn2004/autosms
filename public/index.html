@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 
   <label for="input">Paste nhieu dong tu Excel:</label>
   <textarea id="input"
-    placeholder="0973258093	Hà Nội - Hải Phòng	22	10/11/2023"></textarea>
+    placeholder="0973258093	Hà Nội - Hải Phòng	22h30	10/11/2023"></textarea>
 
   <div class="actions">
     <button class="btn secondary" onclick="preview()">Preview</button>
@@ -162,7 +162,7 @@ async function loadLogs() {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${i + 1}</td>
-        <td>${log.sendtime || ""}</td>
+        <td>${formatVNTime(log.sendtime)}</td>
         <td>${log.phone || ""}</td>
         <td>${log.message || ""}</td>
         <td class="${log.status === "SUCCESS" ? "ok" : "fail"}">
@@ -182,7 +182,13 @@ async function loadLogs() {
     console.log("Load logs error", e);
   }
 }
-
+/* ===============================
+   FORMAT THOI GIAN (THEM O DAY)
+================================ */
+function formatVNTime(iso) {
+  if (!iso) return "";
+  return new Date(iso).toLocaleString("vi-VN");
+}
 /* ===============================
    AUTO LOAD
 ================================ */
