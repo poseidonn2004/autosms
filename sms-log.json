@@ -1,1 +1,632 @@
-﻿
+[
+  {
+    "sendtime": "2026-06-30T05:08:38.899Z",
+    "line": 1,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:17:55.822Z",
+    "line": 1,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:24.271Z",
+    "line": 1,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:28.338Z",
+    "line": 2,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:32.416Z",
+    "line": 3,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:36.456Z",
+    "line": 4,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:40.494Z",
+    "line": 5,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:45.831Z",
+    "line": 6,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:49.945Z",
+    "line": 7,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:53.993Z",
+    "line": 8,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:18:58.168Z",
+    "line": 9,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:02.293Z",
+    "line": 10,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:09.930Z",
+    "line": 11,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:13.991Z",
+    "line": 12,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:18.083Z",
+    "line": 13,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:22.217Z",
+    "line": 14,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:26.263Z",
+    "line": 15,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:32.578Z",
+    "line": 16,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:36.751Z",
+    "line": 17,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:40.923Z",
+    "line": 18,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:44.969Z",
+    "line": 19,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:49.006Z",
+    "line": 20,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:53.380Z",
+    "line": 21,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:19:57.555Z",
+    "line": 22,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:01.609Z",
+    "line": 23,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:05.724Z",
+    "line": 24,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:09.841Z",
+    "line": 25,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:14.094Z",
+    "line": 26,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:18.136Z",
+    "line": 27,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:22.224Z",
+    "line": 28,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:26.272Z",
+    "line": 29,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:30.408Z",
+    "line": 30,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:34.460Z",
+    "line": 31,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:38.586Z",
+    "line": 32,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:42.677Z",
+    "line": 33,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:46.942Z",
+    "line": 34,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:50.988Z",
+    "line": 35,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:20:55.061Z",
+    "line": 36,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:25:59.245Z",
+    "line": 1,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:03.371Z",
+    "line": 2,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:07.419Z",
+    "line": 3,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:11.483Z",
+    "line": 4,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:15.536Z",
+    "line": 5,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:20.129Z",
+    "line": 6,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:24.179Z",
+    "line": 7,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:28.223Z",
+    "line": 8,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:32.267Z",
+    "line": 9,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:36.309Z",
+    "line": 10,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:40.349Z",
+    "line": 11,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:45.416Z",
+    "line": 12,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:49.499Z",
+    "line": 13,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:53.651Z",
+    "line": 14,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:26:57.773Z",
+    "line": 15,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:01.852Z",
+    "line": 16,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:06.083Z",
+    "line": 17,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:10.200Z",
+    "line": 18,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:14.331Z",
+    "line": 19,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:18.363Z",
+    "line": 20,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:22.511Z",
+    "line": 21,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:23.007Z",
+    "line": 1,
+    "phone": "0332551908\tHà Nội - Cẩm Phả\t6h  \t01/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:26.550Z",
+    "line": 22,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:30.606Z",
+    "line": 23,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:34.663Z",
+    "line": 24,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:38.055Z",
+    "line": 1,
+    "phone": "0332551908\tHà Nội - Cẩm Phả\t6h  \t01/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:38.757Z",
+    "line": 25,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:42.892Z",
+    "line": 26,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:46.924Z",
+    "line": 27,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:50.995Z",
+    "line": 28,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:27:55.114Z",
+    "line": 29,
+    "phone": "0376689013\tSapa - Hà nội\t19h30 \t04/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  },
+  {
+    "sendtime": "2026-06-30T05:37:21.385Z",
+    "line": 1,
+    "phone": "0376689013\tHà Nội - Cẩm Phả\t6h  \t01/03/2023",
+    "status": "FAILED",
+    "errorType": "API_ERROR",
+    "errorCode": "API_ERROR",
+    "errorMessage": "API error (HTTP 403)"
+  }
+]

@@ -102,6 +102,8 @@ function saveLog(entry) {
     }
 
     logs.push(entry);
+    // chỉ giữ 100 log mới nhất
+    logs = logs.slice(-100);
     fs.writeFileSync(LOG_FILE, JSON.stringify(logs, null, 2));
 }
 
@@ -238,8 +240,29 @@ app.post("/send-bulk", async (req, res) => {
 // GET LOGS
 // =====================
 app.get("/logs", (req, res) => {
+
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 50;
+
     const logs = readLogs().reverse();
-    res.json({ success: true, logs });
+
+    const totalLogs = logs.length;
+    const totalPages = Math.ceil(totalLogs / limit);
+
+    const start = (page - 1) * limit;
+    const end = start + limit;
+
+    const pageLogs = logs.slice(start, end);
+
+    res.json({
+        success: true,
+        logs: pageLogs,
+        page,
+        limit,
+        totalLogs,
+        totalPages
+    });
+
 });
 
 // =====================

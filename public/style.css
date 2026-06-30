@@ -144,3 +144,19 @@ th {
 #logTable td:nth-child(6) {
     width: 180px;
 }
+#pagination{
+    margin-top:20px;
+    text-align:center;
+}
+
+#pagination button{
+    margin:4px;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+#pagination button.active{
+    background:#1976d2;
+    color:white;
+    font-weight:bold;
+}

@@ -38,6 +38,7 @@
     </thead>
     <tbody></tbody>
   </table>
+  <div id="pagination"></div>
 </div>
 
 <script>
@@ -64,7 +65,8 @@ const ERROR_MAP = {
   "NETWORK_ERROR": "Loi mang / khong ket noi duoc API",
   "UNKNOWN": "Loi khong xac dinh"
 };
-
+const PAGE_SIZE = 20;
+let currentPage = 1;
 /* ===============================
    PREVIEW
 ================================ */
@@ -141,7 +143,7 @@ async function sendBulk() {
       `<div class="success">Gui SMS hoan tat. Vui long xem lich su ben duoi.</div>`;
 
     document.getElementById("input").value = "";
-    loadLogs();
+    loadLogs(1);
   } catch (err) {
     console.log("Send error:", err);
   } finally {
@@ -154,38 +156,56 @@ async function sendBulk() {
 /* ===============================
    LOAD LICH SU
 ================================ */
-async function loadLogs() {
-  try {
-    const res = await fetch(API_BASE + "/logs");
-    const data = await res.json();
-    if (!data.success) return;
+async function loadLogs(page = 1) {
 
-    const tbody = document.querySelector("#logTable tbody");
-    tbody.innerHTML = "";
+    currentPage = page;
 
-    data.logs.forEach((log, i) => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${i + 1}</td>
-        <td>${formatVNTime(log.sendtime)}</td>
-        <td>${log.phone || ""}</td>
-        <td>${log.message || ""}</td>
-        <td class="${log.status === "SUCCESS" ? "ok" : "fail"}">
-          ${log.status === "SUCCESS" ? "Thanh cong" : "That bai"}
-        </td>
-        <td>
-          ${
-            log.status === "FAILED"
-              ? (ERROR_MAP[log.errorCode] || "Loi khong xac dinh")
-              : ""
-          }
-        </td>
-      `;
-      tbody.appendChild(tr);
-    });
-  } catch (e) {
-    console.log("Load logs error", e);
-  }
+    try {
+
+        const res = await fetch(
+            API_BASE + `/logs?page=${page}&limit=${PAGE_SIZE}`
+        );
+
+        const data = await res.json();
+
+        if (!data.success) return;
+
+        const tbody = document.querySelector("#logTable tbody");
+        tbody.innerHTML = "";
+
+        data.logs.forEach((log, i) => {
+
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${(page - 1) * PAGE_SIZE + i + 1}</td>
+                <td>${formatVNTime(log.sendtime)}</td>
+                <td>${log.phone || ""}</td>
+                <td>${log.message || ""}</td>
+                <td class="${log.status === "SUCCESS" ? "ok" : "fail"}">
+                    ${log.status === "SUCCESS" ? "Thanh cong" : "That bai"}
+                </td>
+                <td>
+                    ${
+                        log.status === "FAILED"
+                        ? (ERROR_MAP[log.errorCode] || "Loi khong xac dinh")
+                        : ""
+                    }
+                </td>
+            `;
+
+            tbody.appendChild(tr);
+
+        });
+
+        renderPagination(data.totalPages);
+
+    } catch (e) {
+
+        console.log(e);
+
+    }
+
 }
 /* ===============================
    FORMAT THOI GIAN (THEM O DAY)
@@ -193,6 +213,49 @@ async function loadLogs() {
 function formatVNTime(iso) {
   if (!iso) return "";
   return new Date(iso).toLocaleString("vi-VN");
+}
+function renderPagination(totalPages) {
+
+    const div = document.getElementById("pagination");
+
+    div.innerHTML = "";
+
+    if (totalPages <= 1) return;
+
+    // Previous
+    if (currentPage > 1) {
+        div.innerHTML += `
+            <button onclick="loadLogs(${currentPage - 1})">
+                <<
+            </button>
+        `;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+
+        div.innerHTML += `
+            <button
+                class="${i === currentPage ? "active" : ""}"
+                onclick="loadLogs(${i})">
+
+                ${i}
+
+            </button>
+        `;
+
+    }
+
+    // Next
+    if (currentPage < totalPages) {
+
+        div.innerHTML += `
+            <button onclick="loadLogs(${currentPage + 1})">
+                >>
+            </button>
+        `;
+
+    }
+
 }
 /* ===============================
    AUTO LOAD
